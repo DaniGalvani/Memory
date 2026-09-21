@@ -1,0 +1,32 @@
+@use "./base/fonts";
+@use "./abstract/mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include mixin.center-flex();
+  background-color: #303131;
+  color: white;
+  min-height: 100vh;
+  max-width: 1440px;
+}
+
+.play-time {
+    > p {
+      font-family: "Almarai", sans-serif;
+      font-size: 48px;
+    }
+  text-align: left;
+}
+
+.ready-to-play {
+    > h1 {
+      font-family: "Red Rose", sans-serif;
+      font-size: 140px;
+    }
+  @include mixin.center-flex();
+}
