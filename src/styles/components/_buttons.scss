@@ -14,21 +14,76 @@
   width: 250px;
   height: 98px;
   margin-top: 85px;
-  gap: 15px;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
   transform-origin: top center;
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: colors.$btn-start;
+    transform-origin: top center;
+    transition: transform 0.3s ease-in-out;
+  }
 
   .start-game-icon {
-      transition: transform 0.3s ease-in-out;
-    }
+    transform-origin: top center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .start-game-wrapper {
+    @include mixin.center-flex(row);
+    transform: translateX(-3px);
+    transition: transform 0.3s ease-in-out;
+    gap: 8px;
+  }
 
   &:hover {
-    transform: scaleX(1.08) scaleY(1.07);
+    &::before {
+      transform: scaleX(1.05) scaleY(1.05);
+    }
 
     .start-game-icon {
-      transform: rotate(-20deg) scale(1.08);
-      transition: transform 0.3s ease-in-out;
+      transform: rotate(-20deg) scale(1.1);
+    }
+
+    .start-game-wrapper {
+    transform: translateX(3px);
+    transition: transform 0.3s ease-in-out;
+    gap: 8px;
+  }
+  }
+
+  .start-arrows {
+    display: grid;
+    place-items: center;
+
+    img {
+      grid-area: 1 / 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .start-arrow-icon {
+    opacity: 1;
+  }
+
+  .start-arrow-big {
+    opacity: 0;
+  }
+
+  &:hover {
+    .start-arrow-icon {
+      opacity: 0;
+    }
+
+    .start-arrow-big {
+      opacity: 1;
     }
   }
 }
