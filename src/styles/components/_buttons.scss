@@ -14,8 +14,21 @@
   width: 250px;
   height: 98px;
   margin-top: 85px;
+  gap: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: top center;
+
+  .start-game-icon {
+      transition: transform 0.3s ease-in-out;
+    }
 
   &:hover {
-    transform: scale(1.08);
+    transform: scaleX(1.08) scaleY(1.07);
+
+    .start-game-icon {
+      transform: rotate(-20deg) scale(1.08);
+      transition: transform 0.3s ease-in-out;
+    }
   }
 }
