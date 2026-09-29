@@ -1,7 +1,7 @@
-@use "./base/fonts";
-@use "./abstract/mixin";
-@use "./components/buttons";
-@use "./base/colors";
+@use "./base/fonts" as fonts;
+@use "./abstract/mixin" as mixin;
+@use "./components/buttons" as buttons;
+@use "./base/colors" as colors;
 
 * {
   margin: 0;
@@ -37,5 +37,18 @@ body {
       font-size: 140px;
     }
     @include mixin.center-flex();
+  }
+}
+
+.controller-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .controller-background {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    object-fit: cover;
   }
 }
