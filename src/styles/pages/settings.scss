@@ -99,12 +99,13 @@ body {
   }
 }
 
-.theme-options:hover .theme-line,
+.theme-options-hv:hover .theme-line,
+.theme-options-hv:has(input:checked) .theme-line,
 .theme-options:has(input:checked) .theme-line {
   opacity: 1;
 }
 
-.theme-options {
+.theme-options-hv {
     &:hover input[type="radio"] {
       background-color: #303131;
       box-shadow: inset 0 0 0 4px white;
