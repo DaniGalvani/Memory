@@ -57,18 +57,22 @@ body {
     width: 576px;
     height: 81px;
     background-color: #f6f6f6;
+    padding-inline: 20px;
 
     .settings-items {
       @include mixin.center-flex(row, space-around, center);
       width: 100%;
 
       a {
-        @include mixin.center-flex(row, space-around, center);
+        @include mixin.center-flex(row, space-between, center);
         text-decoration: none;
         color: #333;
         font-weight: bold;
         background-color: colors.$btn-start;
         transition: background-color 0.2s ease;
+        font-size: fonts.$font-size-xs;
+        font-family: "Red Rose", sans-serif;
+        padding: 20px;
         width: 126px;
         height: 53px;
 
@@ -80,7 +84,6 @@ body {
   }
 
   .theme-visual {
-    margin-top: 20px;
     width: 420px;
     height: auto;
     object-fit: contain;
@@ -91,7 +94,6 @@ body {
     @include mixin.center-flex(row, flex-start, center);
     gap: 10px;
     font-size: fonts.$font-size-sm;
-    margin-top: 20px;
     margin-bottom: 16px;
   }
 
@@ -125,7 +127,7 @@ body {
     @include mixin.center-flex(column, flex-start, flex-start);
     gap: 12px;
     margin-bottom: 53px;
-    padding-inline: 40px;
+    padding-left: 40px;
   }
 
   .theme-line {
