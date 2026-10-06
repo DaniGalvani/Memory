@@ -90,3 +90,21 @@
     }
   }
 }
+
+.btn-start {
+  @include mixin.center-flex(row, space-between, center);
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  background-color: colors.$btn-start;
+  transition: background-color 0.2s ease;
+  font-size: fonts.$font-size-xs;
+  font-family: "Red Rose", sans-serif;
+  padding: 20px;
+  width: 126px;
+  height: 53px;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
