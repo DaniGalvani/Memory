@@ -1,6 +1,7 @@
 @use "/src/styles/base/fonts" as fonts;
 @use "/src/styles/abstract/mixin" as mixin;
 @use "/src/styles/base/colors" as colors;
+@use "/src/styles/components/buttons" as buttons;
 
 $start-scale: 1.15;
 $start-width: 126px;
@@ -76,20 +77,11 @@ body {
       flex-shrink: 0;
       width: 536px;
 
-      a {
-        @include mixin.center-flex(row, space-between, center);
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        background-color: colors.$btn-start;
+      .btn-start {
         transform-origin: left center;
-        transition: transform 0.3s ease-in-out;
-        font-size: fonts.$font-size-xs;
-        font-family: "Red Rose", sans-serif;
-        padding: 20px;
+        transition: transform 0.3s ease-in-out, background-color 0.2s ease;
         width: $start-width;
         flex-shrink: 0;
-        height: 53px;
 
         img {
           transition: transform 0.3s ease-in-out;
