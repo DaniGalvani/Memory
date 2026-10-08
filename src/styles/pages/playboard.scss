@@ -1,0 +1,14 @@
+@use "/src/styles/base/colors" as colors;
+@use "/src/styles/abstract/mixin" as mixin;
+@use "/src/styles/base/fonts" as fonts;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    @include mixin.body-style();
+    background-color: colors.$primary-color;
+}

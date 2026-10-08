@@ -4,3 +4,9 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
+@mixin body-style() {
+  min-height: 100vh;
+  max-width: 1440px;
+  margin-inline: auto;
+}
