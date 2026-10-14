@@ -1,6 +1,7 @@
-@use "../base/colors";
-@use "../abstract/mixin";
-@use "../base/fonts";
+@use "../base/colors" as colors;
+@use "../abstract/mixin" as mixin;
+@use "../base/fonts" as fonts;
+@use "../base/variables" as vars;
 
 .start-game {
   @include mixin.center-flex(row, space-evenly, center);
@@ -104,7 +105,12 @@
   width: 126px;
   height: 53px;
 
-  &:hover {
-    background-color: #e0e0e0;
+  &:hover,
+  &:focus-visible {
+    transform: scale(vars.$start-scale);
+
+    img {
+      transform: rotate(-12deg);
+    }
   }
 }

@@ -12,3 +12,18 @@ body {
     @include mixin.body-style();
     background-color: colors.$primary-color;
 }
+
+.playboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1217px;
+  height: 644px;
+}
+
+.playboard-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

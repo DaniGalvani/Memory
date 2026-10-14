@@ -2,10 +2,8 @@
 @use "/src/styles/abstract/mixin" as mixin;
 @use "/src/styles/base/colors" as colors;
 @use "/src/styles/components/buttons" as buttons;
+@use "/src/styles/base/variables" as vars;
 
-$start-scale: 1.15;
-$start-width: 126px;
-$start-growth: 0px;
 
 * {
   margin: 0;
@@ -69,7 +67,7 @@ body {
     cursor: pointer;
 
     &:has(a:hover, a:focus-visible) {
-      padding-right: calc(20px + $start-width * ($start-scale - 1));
+      padding-right: calc(20px + vars.$start-width * (vars.$start-scale - 1));
     }
 
     .settings-items {
@@ -80,20 +78,11 @@ body {
       .btn-start {
         transform-origin: left center;
         transition: transform 0.3s ease-in-out, background-color 0.2s ease;
-        width: $start-width;
+        width: vars.$start-width;
         flex-shrink: 0;
 
         img {
           transition: transform 0.3s ease-in-out;
-        }
-
-        &:hover,
-        &:focus-visible {
-          transform: scale($start-scale);
-
-          img {
-            transform: rotate(-12deg);
-          }
         }
       }
     }
