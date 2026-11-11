@@ -8,10 +8,13 @@
   <body>
     <main>
       <div class="playboard">
-        <header class="playboard-header">
+        <header class="playboard__header">
           <div class="player-info">
-            <div class="player-points" id="playerpoints"></div>
-            <div class="current-player" id="currentplayer"></div>
+            <div class="player-points" id="playerpoints">
+              <div><img src="./assets/img/blue.svg" alt="Player Points"><span class="points-blue" id="points">0</span></div>
+              <div><img src="./assets/img/orange.svg" alt="Player Points"><span class="points-orange" id="points">0</span></div>
+            </div>
+            <div class="current-player" id="currentplayer">Current player: <span id="player"><img src="./assets/icons/label.svg" alt="Current Player"></span></div>
           </div>
           <div class="game-exit"></div>
         </header>

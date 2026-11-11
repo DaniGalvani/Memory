@@ -1,18 +1,26 @@
 $font-size-xs: 20px;
 $font-size-sm: 24px;
+$font-size-md: 26px;
 $font-size-lg: 40px;
 $font-size-xl: 54px;
 
 @font-face {
   font-family: 'Almarai';
-  src: url('../fonts/Almarai/Almarai-Regular.ttf') format('truetype');
+  src: url('/fonts/Almarai/Almarai-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Red Rose';
-  src: url('../fonts/Red_Rose/static/RedRose-Bold.ttf') format('truetype');
+  src: url('/fonts/Red_Rose/static/RedRose-Bold.ttf') format('truetype');
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red Rose Regular';
+  src: url('/fonts/Red_Rose/static/RedRose-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
