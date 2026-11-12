@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory - Playboard</title>
   </head>
-  <body>
+  <body onload="init()">
     <main class="playboard-main">
       <div class="playboard">
         <header class="playboard__header">
@@ -16,9 +16,9 @@
             </div>
             <div class="current-player" id="currentplayer">Current player: <span id="player"><img src="./assets/icons/label.svg" alt="Current Player"></span></div>
           </div>
-          <div class="game-exit"></div>
+          <button class="game-exit"><img src="./assets/icons/move-item.svg" alt="Exit game">Exit game</button>
         </header>
-        <div class="play-cards" id="playcards"></div>
+        <section class="play-cards" id="playcards"></section>
       </div>
     </main>
     <script type="module" src="./src/playboard.ts"></script>
