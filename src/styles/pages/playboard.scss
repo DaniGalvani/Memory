@@ -21,10 +21,10 @@ body {
 
 .playboard {
   @include mixin.center-flex();
-  flex-direction: column;
   width: calc(100% - 32px);
   max-width: 1217px;
-  height: 644px;
+  height: auto;
+  justify-content: flex-start;
   margin-top: 41px;
   margin-left: 0;
   margin-right: 0;
@@ -120,12 +120,19 @@ body {
 }
 
 .play-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 529px;
-  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  width: 504px;
+  max-width: 100%;
   margin-top: 54px;
+  margin-bottom: 32px;
+
+  &[data-card-count="24"],
+  &[data-card-count="36"] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 750px;
+  }
 }
 
 .field {
@@ -137,7 +144,8 @@ body {
 }
 
 .card {
-  width: 120px;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
   background-color: transparent;
   border: none;
@@ -153,7 +161,10 @@ body {
   &__face {
     position: absolute;
     inset: 0;
-    background-image: url('./assets/img/Code vibes card.svg');
+    background-image: url('../../../assets/img/Code vibes card.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     backface-visibility: hidden;
 
     &--back {
