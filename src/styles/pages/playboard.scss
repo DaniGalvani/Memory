@@ -25,6 +25,7 @@ body {
   width: calc(100% - 32px);
   max-width: 1217px;
   min-height: 644px;
+  justify-content: flex-start;
   margin-top: 41px;
   margin-left: 0;
   margin-right: 0;
@@ -127,6 +128,7 @@ body {
   max-width: var(--board-width, 528px);
   height: auto;
   margin-top: 54px;
+  margin-bottom: 32px;
 }
 
 .field {
@@ -139,6 +141,7 @@ body {
 
 .card {
   width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
   background-color: transparent;
   border: none;

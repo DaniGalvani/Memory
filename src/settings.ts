@@ -38,5 +38,10 @@ settingsOptions.forEach((option) => {
   option.addEventListener('change', updateSettings);
 });
 
+startLink?.addEventListener('click', () => {
+  const selectedSize = document.querySelector<HTMLInputElement>('input[name="board-size"]:checked');
+  localStorage.setItem('cardCount', selectedSize?.value ?? '16');
+});
+
 updateSettings();
 window.addEventListener('pageshow', updateSettings);

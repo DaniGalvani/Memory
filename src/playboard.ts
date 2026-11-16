@@ -55,14 +55,17 @@ function init() {
       window.history.replaceState(null, "", `${window.location.pathname}?${parameters}${window.location.hash}`);
     }
     const requestedCount = Number(parameters.get("cards"));
-    const cardCount = [16, 24, 36].includes(requestedCount) ? requestedCount : 16;
+    const savedCardCount = Number(localStorage.getItem("cardCount"));
+    const fallbackCount = [16, 24, 36].includes(savedCardCount) ? savedCardCount : 16;
+    const cardCount = [16, 24, 36].includes(requestedCount) ? requestedCount : fallbackCount;
     const columns = cardCount === 16 ? 4 : 6;
     const cards = createCardPairs(cardCount);
 
+    playcards.dataset.cardCount = String(cardCount);
     playcards.style.setProperty("--columns", String(columns));
     playcards.style.setProperty("--board-width", `${columns * 120 + (columns - 1) * 16}px`);
     playcards.innerHTML = cards.map((image, index) => `
-      <button class="card" type="button" aria-label="Karte ${index + 1}">
+      <button class="card" type="button" aria-label="Karte ${index + 1} umdrehen">
         <div class="card__inner">
           <div class="card__face"></div>
           <div class="card__face card__face--back" style="background-image: url('${image}')"></div>
