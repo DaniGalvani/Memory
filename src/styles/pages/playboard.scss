@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   width: calc(100% - 32px);
   max-width: 1217px;
-  height: 644px;
+  min-height: 644px;
   margin-top: 41px;
   margin-left: 0;
   margin-right: 0;
@@ -120,10 +120,11 @@ body {
 }
 
 .play-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 529px;
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
+  gap: clamp(4px, 1.5vw, 16px);
+  width: 100%;
+  max-width: var(--board-width, 528px);
   height: auto;
   margin-top: 54px;
 }
@@ -137,7 +138,7 @@ body {
 }
 
 .card {
-  width: 120px;
+  width: 100%;
   aspect-ratio: 1 / 1;
   background-color: transparent;
   border: none;
@@ -153,13 +154,15 @@ body {
   &__face {
     position: absolute;
     inset: 0;
-    background-image: url('./assets/img/Code vibes card.svg');
+    background-image: url('../../../assets/img/Code vibes card.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     backface-visibility: hidden;
 
     &--back {
       transform: rotateY(180deg);
       background-image: none;
-      background-color: blue;
     }
   }
 

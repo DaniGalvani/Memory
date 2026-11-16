@@ -71,9 +71,32 @@ body {
     }
 
     .settings-items {
-      @include mixin.center-flex(row, space-around, center);
+      @include mixin.center-flex(row, flex-start, center);
       flex-shrink: 0;
-      width: 536px;
+      gap: 16px;
+
+      .settings-summary {
+        @include mixin.center-flex(row, flex-start, center);
+        gap: 16px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 4px;
+        }
+      }
+
+      .settings-separator {
+        flex-shrink: 0;
+        width: 27px;
+        height: 56px;
+      }
 
       .btn-start {
         transform-origin: left center;
@@ -85,6 +108,12 @@ body {
           transition: transform 0.3s ease-in-out;
         }
       }
+    }
+
+    &.is-selected .settings-separator {
+      content: url("/assets/icons/settings-separator-selected.svg");
+      width: 37px;
+      height: 60px;
     }
   }
 

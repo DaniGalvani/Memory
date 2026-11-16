@@ -62,7 +62,7 @@
           </h3>
           <div class="choose-player">
             <span class="theme-options">
-              <input type="radio" name="player" id="player-blue" />
+              <input type="radio" name="player" id="player-blue" checked/>
               <label for="player-blue">Blue player</label>
               <img
                 class="theme-line"
@@ -85,7 +85,7 @@
           </h3>
           <div class="board-size">
             <span class="theme-options">
-              <input type="radio" name="board-size" id="small-board" />
+              <input type="radio" name="board-size" id="small-board" value="16" checked/>
               <label for="small-board">16 cards</label>
               <img
                 class="theme-line"
@@ -94,7 +94,7 @@
               />
             </span>
             <span class="theme-options">
-              <input type="radio" name="board-size" id="medium-board" />
+              <input type="radio" name="board-size" id="medium-board" value="24" />
               <label for="medium-board">24 cards</label>
               <img
                 class="theme-line"
@@ -103,8 +103,8 @@
               />
             </span>
             <span class="theme-options">
-              <input type="radio" name="board-size" id="large-board" />
-              <label for="large-board">32 cards</label>
+              <input type="radio" name="board-size" id="large-board" value="36" />
+              <label for="large-board">36 cards</label>
               <img
                 class="theme-line"
                 src="./assets/icons/Line 5.svg"
@@ -121,11 +121,13 @@
           />
           <div class="settings-actions" id="set-actions">
             <div class="settings-items">
-              <span id="game-theme">Game theme</span>
-              <img src="./assets/icons/Line 7.svg" alt="Line separator" />
-              <span id="player">Player</span>
-              <img src="./assets/icons/Line 7.svg" alt="Line separator" />
-              <span id="board-size">Board size</span>
+              <button class="settings-summary" type="button" aria-label="Ausgewählte Einstellungen anzeigen">
+                <span id="game-theme">Game theme</span>
+                <img class="settings-separator" src="./assets/icons/Line 7.svg" alt="" />
+                <span id="player">Player</span>
+                <img class="settings-separator" src="./assets/icons/Line 7.svg" alt="" />
+                <span id="board-size">Board size</span>
+              </button>
               <a class="btn-start" href="./playboard.html"><img src="./assets/icons/smart_display.svg" alt="Start icon" />Start</a>
             </div>
           </div>
